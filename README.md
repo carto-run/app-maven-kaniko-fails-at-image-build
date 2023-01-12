@@ -1,16 +1,16 @@
-# app-maven-kaniko
+# app-maven-kaniko-fails-at-image-build
 
-a maven/spring-boot application that uses kaniko to build the image.
+a maven/spring-boot application that uses kaniko to build the image, but fails.
 
 ## Creating the Workload
 
 ```
-tanzu apps workload create app-maven-kaniko \
+tanzu apps workload create app-maven-kaniko-fails-at-image-build \
   --namespace dev \
   --git-branch main \
-  --git-repo https://github.com/carto-run/app-maven-kaniko \
+  --git-repo https://github.com/carto-run/app-maven-kaniko-fails-at-image-build \
   --label apps.tanzu.vmware.com/has-tests=true \
-  --label app.kubernetes.io/part-of=app-maven-kaniko \
+  --label app.kubernetes.io/part-of=app-maven-kaniko-fails-at-image-build \
   --type web \
   --param dockerfile=./Dockerfile \
   --yes
@@ -19,7 +19,7 @@ tanzu apps workload create app-maven-kaniko \
 ## Logs
 
 ```
-tanzu apps workload tail app-maven-kaniko
+tanzu apps workload tail app-maven-kaniko-fails-at-image-build
 ```
 
 ## Configuration
